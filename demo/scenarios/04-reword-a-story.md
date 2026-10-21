@@ -34,7 +34,7 @@ tell it, each in its own words. Change it once, and all three retell it.
 5. `npm run check` is green, with nothing that needs an update.
 
 Reference run (2026-10-21): `04-reference-run.md` and `04-reference.patch`. If the live
-demo misbehaves, run `git apply scenarios/04-reference.patch` here, then
+demo misbehaves, run `patch -p1 < scenarios/04-reference.patch` here, then
 `npx fakto touch website/index.html pitch/investor-deck.md marketing/sales-deck.md`.
 
 ## Bonus beat

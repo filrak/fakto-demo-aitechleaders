@@ -4,7 +4,7 @@ Prompt: "Hardware ships 9 levels and a 75-second cycle; I already changed the fa
 
 Setup: a fresh copy of this example with the two hardware facts already changed (what Save in the canvas does).
 
-Result: 16 lines across 10 files rewritten (both website pages, docs, SDK code and schema, both decks, box copy), the slides in `out/investor-deck.html` rebuilt, the frozen launch post untouched, `fakto check` green, in 88 seconds. `01-reference.patch` holds all of it, the fact change included: on a clean tree, `git apply scenarios/01-reference.patch` if the live demo misbehaves.
+Result: 16 lines across 10 files rewritten (both website pages, docs, SDK code and schema, both decks, box copy), the slides in `out/investor-deck.html` rebuilt, the frozen launch post untouched, `fakto check` green, in 88 seconds. `01-reference.patch` holds all of it, the fact change included: on a clean tree, `patch -p1 < scenarios/01-reference.patch` if the live demo misbehaves.
 
 ## What the agent reported
 

@@ -3,7 +3,7 @@
 Prompt: the one in `05-new-material.md`, typed as is, on a fresh copy of this example.
 
 Result: `marketing/retail-sheet.md` with 15 anchored lines, `fakto check` green, nothing
-invented. `05-reference.patch` holds the sheet; `git apply scenarios/05-reference.patch` is the
+invented. `05-reference.patch` holds the sheet; `patch -p1 < scenarios/05-reference.patch` is the
 fallback.
 
 ## What the agent reported

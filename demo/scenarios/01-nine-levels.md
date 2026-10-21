@@ -35,7 +35,7 @@ must follow.
 
    Reference run from 2026-10-21: `01-reference-run.md` (what the agent reported)
    and `01-reference.patch` (the full diff, facts included; run
-   `git apply scenarios/01-reference.patch` here if the live demo misbehaves).
+   `patch -p1 < scenarios/01-reference.patch` here if the live demo misbehaves).
 
 5. Prove it:
    ```bash

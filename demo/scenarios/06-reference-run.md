@@ -3,7 +3,7 @@
 Both turns, typed as in `06-ingest-article.md`, as one resumed session on a fresh copy of this
 example. Turn 1 changed no files. Turn 2 ended with `fakto check` at 0 errors and one warning:
 the article cites the draft fact `personality-nonna`, on purpose (it pre-announces her).
-`06-reference.patch` holds every change from turn 2; `git apply scenarios/06-reference.patch` is
+`06-reference.patch` holds every change from turn 2; `patch -p1 < scenarios/06-reference.patch` is
 the fallback.
 
 ## Turn 1: what is new, what conflicts

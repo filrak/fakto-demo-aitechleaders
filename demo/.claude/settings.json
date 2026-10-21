@@ -1,4 +1,11 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(npx fakto:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {

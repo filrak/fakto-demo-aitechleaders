@@ -6,7 +6,7 @@ Setup: a copy of this example with the homepage and both decks reviewed the day 
 
 Result: the story retold in three voices, the slides rebuilt, `fakto check` green. The homepage line became "Tostr is the breakfast API. Build on it the way you build on payments or maps." Both decks retitled their platform slide "The breakfast API". The consistency pass also realigned an investor-deck line with the "first smart toaster" story, and Claude flagged two numbers that no fact records ("since 1920", "a hundred years") instead of guessing.
 
-`04-reference.patch` holds the record change, the rewritten lines and the rebuilt slides. After `git apply scenarios/04-reference.patch`, run `npx fakto touch website/index.html pitch/investor-deck.md marketing/sales-deck.md` to stamp them for the demo day.
+`04-reference.patch` holds the record change, the rewritten lines and the rebuilt slides. After `patch -p1 < scenarios/04-reference.patch`, run `npx fakto touch website/index.html pitch/investor-deck.md marketing/sales-deck.md` to stamp them for the demo day.
 
 ## What the agent reported
 

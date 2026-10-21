@@ -31,4 +31,4 @@ fact follows the code, and the docs follow the fact."
 
 Reference run (2026-10-21, a real Sync all on a copy): passed in one pass, and
 `07-reference.patch` is the resulting diff, code change included. Fallback if the live run
-misbehaves: on a clean tree, `git apply scenarios/07-reference.patch`, then `npx fakto check`.
+misbehaves: on a clean tree, `patch -p1 < scenarios/07-reference.patch`, then `npx fakto check`.
