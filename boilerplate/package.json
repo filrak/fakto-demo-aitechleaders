@@ -10,6 +10,6 @@
     "canvas": "fakto canvas"
   },
   "devDependencies": {
-    "@filrak/fakto": "^0.0.1"
+    "@fakto/core": "^0.0.1"
   }
 }

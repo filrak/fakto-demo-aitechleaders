@@ -18,7 +18,7 @@ Facts are the source of truth. Artifacts cite them with an inline anchor
 what; this skill does the part that needs judgment: rewriting the dependents.
 
 Run the CLI as `npx fakto <cmd>` (the repo installs the `fakto` package).
-The conventions are in the package README (`node_modules/@filrak/fakto/README.md`).
+The conventions are in the package README (`node_modules/@fakto/core/README.md`).
 If `fakto.config.json` names `houseRules`, read that file before writing any
 artifact and follow it: it is the company's voice and wording rules.
 
