@@ -25,6 +25,17 @@ ask it things like "browning levels are 9 now, propagate", or work through
 
 ## For agents
 
-Each folder is a self-contained Fakto project with its own `CLAUDE.md`, skills
-(`.claude/skills/fakto` for changes, `.claude/skills/fakto-canvas` for the live map) and
-an "For agents" section in its README. Work from inside the folder.
+Each folder is a self-contained Fakto project with its own `CLAUDE.md`, its own Claude Code
+skills and a "For agents" section in its README. Work from inside the folder.
+
+The skills live in each folder's hidden `.claude/` directory, so Claude Code loads them when
+you start it there. They are part of this repo, not of the npm package (`@fakto/core` is the
+CLI, the library and the canvas):
+
+| Skill | What it does | demo | boilerplate |
+|---|---|---|---|
+| `fakto` | the change workflow: a fact changed, retire, add, tag, stories, sync from a source file | [SKILL.md](demo/.claude/skills/fakto/SKILL.md) | [SKILL.md](boilerplate/.claude/skills/fakto/SKILL.md) |
+| `fakto-canvas` | starts the live map and tells you where it runs; used at the start of every session | [SKILL.md](demo/.claude/skills/fakto-canvas/SKILL.md) | [SKILL.md](boilerplate/.claude/skills/fakto-canvas/SKILL.md) |
+
+Hooks in each `.claude/settings.json`: at session start Claude is told to start the canvas;
+after every edit `npx fakto check` runs.
