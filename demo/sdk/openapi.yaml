@@ -1,0 +1,35 @@
+# reviewed: 2026-09-01
+openapi: 3.1.0
+info:
+  title: Tostr API
+  version: "1.0"
+  description: Finally, a toaster that listens. # fact:product-tagline
+paths:
+  /v1/toast:
+    post:
+      summary: Start a toast job # fact:api-endpoint-toast (POST /v1/toast)
+      description: Rate limited to 10 requests per minute per toaster. # fact:api-rate-limit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                level:
+                  type: integer
+                  minimum: 1
+                  maximum: 7 # fact:browning-levels
+                slot:
+                  type: integer
+                  minimum: 1
+                  maximum: 2 # fact:slots
+                personality:
+                  type: string
+                  enum: [Butler, Coach, Gremlin] # fact:personality-butler fact:personality-coach fact:personality-gremlin
+      responses:
+        "202":
+          description: Toasting
+        "409":
+          description: Already toasting
+        "429":
+          description: Rate limit exceeded

@@ -1,0 +1,33 @@
+# Tostr — the programmable API and SDK. Changing these ripples into code and docs.
+
+- id: api-endpoint-toast
+  value: "POST /v1/toast"
+  statement: "A toast job is started with POST /v1/toast."
+  status: live
+  updated: 2026-09-01
+  owner: platform
+  source: sdk/src/config.ts
+
+- id: api-rate-limit
+  value: "10"
+  statement: "The API accepts 10 requests per minute per toaster."
+  status: live
+  updated: 2026-09-01
+  owner: platform
+  note: "It is a toaster. It cannot toast faster than that anyway."
+  source: sdk/src/config.ts
+
+- id: sdk-package-name
+  value: "@tostr/sdk"
+  statement: "The official SDK is published as @tostr/sdk."
+  status: live
+  updated: 2026-09-01
+  owner: platform
+
+- id: sdk-method-toast
+  value: "tostr.toast("
+  statement: "A toast job is started from the SDK with tostr.toast({ level, personality })."
+  status: live
+  updated: 2026-09-01
+  owner: platform
+  note: "The value is the call prefix so the drift check matches both code and prose."

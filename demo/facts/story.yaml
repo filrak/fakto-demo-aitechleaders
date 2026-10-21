@@ -1,0 +1,24 @@
+# Tostr — the stories we tell. A narrative is a fact without a `value`: every channel may
+# word it its own way, so the check only makes sure each anchored section exists and goes
+# stale when the story changes. `supports` lists the facts the story rests on.
+
+- id: story-first-smart-toaster
+  statement: "The toaster is the last appliance in the kitchen without software, and Tostr is the first one that has it."
+  status: live
+  updated: 2026-10-21
+  owner: marketing
+  supports: [product-claim-first]
+
+- id: story-breakfast-talks-back
+  statement: "Breakfast talks back: you tell Tostr what you want, and it answers in the personality you picked."
+  status: live
+  updated: 2026-10-21
+  owner: marketing
+  supports: [wake-word, personalities-count, personality-butler, personality-coach, personality-gremlin]
+
+- id: story-platform
+  statement: "Tostr is a platform, not an appliance: anything that can call an API can make breakfast."
+  status: live
+  updated: 2026-10-21
+  owner: marketing
+  supports: [api-endpoint-toast, sdk-package-name, sdk-method-toast]

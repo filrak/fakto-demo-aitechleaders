@@ -1,0 +1,60 @@
+# Tostr — company facts. The numbers a pitch repeats: traction, money, team, market.
+# Every figure here is invented for the demo.
+
+- id: company-founded
+  value: "2025"
+  statement: "Tostr was founded in 2025."
+  status: live
+  updated: 2026-10-21
+  owner: founders
+
+- id: team-size
+  value: "9"
+  statement: "The Tostr team is 9 people."
+  status: live
+  updated: 2026-10-21
+  owner: founders
+
+- id: preorders
+  value: "12,000"
+  statement: "Tostr has 12,000 pre-orders."
+  status: live
+  updated: 2026-10-21
+  owner: growth
+  note: "Paid deposits only. Waitlist sign-ups are not pre-orders."
+
+- id: pack-attach-rate
+  value: "41%"
+  statement: "41% of pre-order customers add Personality Pack."
+  status: live
+  updated: 2026-10-21
+  owner: growth
+  note: "Measured at pre-order checkout."
+
+- id: gross-margin
+  value: "38%"
+  statement: "Tostr's hardware gross margin is 38%."
+  status: live
+  updated: 2026-10-21
+  owner: finance
+
+- id: market-size
+  value: "$4.6B"
+  statement: "The global toaster market is worth $4.6B a year."
+  status: live
+  updated: 2026-10-21
+  owner: finance
+
+- id: raise-amount
+  value: "$3M"
+  statement: "Tostr is raising a $3M seed round."
+  status: live
+  updated: 2026-10-21
+  owner: founders
+
+- id: runway-months
+  value: "18"
+  statement: "The seed round funds 18 months of runway."
+  status: live
+  updated: 2026-10-21
+  owner: finance

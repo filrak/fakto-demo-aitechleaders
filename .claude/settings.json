@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'This repo holds two Fakto projects: demo/ (Tostr, a complete example) and boilerplate/ (an empty starter). Ask the user which one to open unless they said, then work inside that folder: run its commands from there, follow its CLAUDE.md, and first start its canvas with the fakto-canvas skill (npx fakto canvas --background from that folder) and tell the user where it runs.'"
+          }
+        ]
+      }
+    ]
+  }
+}

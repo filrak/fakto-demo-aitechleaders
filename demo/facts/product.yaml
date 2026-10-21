@@ -1,0 +1,65 @@
+# Tostr — what the product is and how it's named. One record per fact.
+#
+# status:  live | draft | retired      (only `live` may appear in artifacts)
+# updated: the date the VALUE last changed. Bump it on every change; that is
+#          what makes dependents stale (artifact.reviewed < fact.updated).
+# value:   the exact string an artifact line must contain (the drift check).
+
+- id: product-tagline
+  value: "Finally, a toaster that listens."
+  statement: "Tostr's tagline is 'Finally, a toaster that listens.'"
+  status: live
+  updated: 2026-09-01
+  owner: marketing
+
+- id: product-claim-first
+  value: "the first smart toaster"
+  statement: "Tostr is the first smart toaster: the first toaster you can talk to and program."
+  status: live
+  updated: 2026-09-01
+  owner: marketing
+  note: "Defensible as 'first toaster with a conversational interface and a public API'. Never 'the first toaster'."
+
+- id: wake-word
+  value: "Hey Tostr"
+  statement: "The wake word is 'Hey Tostr'."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: personalities-count
+  value: "3"
+  statement: "Tostr ships with 3 personalities: Butler, Coach and Gremlin."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: personality-butler
+  value: "Butler"
+  statement: "Butler: polite, brief, calls you 'sir or madam' until told otherwise. Included on Free."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: personality-coach
+  value: "Coach"
+  statement: "Coach: motivational, counts your slices, says 'one more rep' when you ask for seconds."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: personality-gremlin
+  value: "Gremlin"
+  statement: "Gremlin: sarcastic, comments on your bread choices, occasionally toasts one side darker on purpose."
+  status: live
+  updated: 2026-09-01
+  owner: product
+  note: "Most-loved and most-complained-about personality. Watch the support queue."
+
+- id: hero-headline
+  value: "The True Robotic Revolution Has Arrived"
+  statement: "The landing page hero headline is 'The True Robotic Revolution Has Arrived'."
+  status: live
+  updated: 2026-09-01
+  owner: marketing
+  note: "Filip's line. Title case is deliberate; it is a headline, not a sentence."

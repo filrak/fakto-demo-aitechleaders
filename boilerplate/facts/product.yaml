@@ -1,0 +1,12 @@
+# Product facts. One record per fact; every file that states one anchors it.
+#
+# - id: plan-pro-price          kebab-case, unique across all fact files
+#   value: "$49"                the exact text every citing line must contain
+#   statement: "The Pro plan costs $49 a month."
+#   status: live                live | draft | retired
+#   updated: 2026-01-01         bump on every change; this is what makes files need an update
+#   owner: product              optional
+#   note: "Monthly, excl. VAT"  optional
+#
+# Start empty: open the canvas (npm run canvas) and use "Ask Claude to find facts",
+# or add records by hand. Add more files here (pricing.yaml, api.yaml…) to group facts.

@@ -1,0 +1,258 @@
+diff --git a/docs/api-reference.md b/docs/api-reference.md
+index 755112d..e985aaf 100644
+--- a/docs/api-reference.md
++++ b/docs/api-reference.md
+@@ -5,13 +5,13 @@ reviewed: 2026-10-21
+ 
+ # API reference
+ 
+-## Start a toast job <!-- from:sdk/openapi.yaml#paths./v1/toast@69cbd9cc7c64 -->
++## Start a toast job <!-- from:sdk/openapi.yaml#paths./v1/toast@ac0c37aae7b7 -->
+ 
+ `POST /v1/toast` <!-- fact:api-endpoint-toast -->
+ 
+ | Field | Type | Notes |
+ |---|---|---|
+-| `level` | integer | 1 to 7 <!-- fact:browning-levels --> |
++| `level` | integer | 1 to 9 <!-- fact:browning-levels --> |
+ | `slot` | integer | 1 or 2; omit to use both <!-- fact:slots --> |
+ | `personality` | string | `Butler`, `Coach` or `Gremlin` <!-- fact:personality-butler --> <!-- fact:personality-coach --> <!-- fact:personality-gremlin --> |
+ | `message` | string | Optional. Spoken when the toast pops. |
+@@ -19,7 +19,7 @@ reviewed: 2026-10-21
+ ### Rate limit
+ 
+ 10 requests per minute per toaster. <!-- fact:api-rate-limit -->
+-Above that you get `429 Too Many Requests`. A cycle takes 90 seconds, <!-- fact:cycle-seconds -->
++Above that you get `429 Too Many Requests`. A cycle takes 75 seconds, <!-- fact:cycle-seconds -->
+ so you were not going to toast faster anyway.
+ 
+ ### Responses
+diff --git a/docs/getting-started.md b/docs/getting-started.md
+index cffe024..b1fceaf 100644
+--- a/docs/getting-started.md
++++ b/docs/getting-started.md
+@@ -1,6 +1,6 @@
+ ---
+ title: Getting started
+-reviewed: 2026-09-01
++reviewed: 2026-10-21
+ ---
+ 
+ # Getting started
+@@ -11,7 +11,7 @@ This page gets you from box to toast.
+ ## 1. Plug it in
+ 
+ Put bread in either of the 2 slots. <!-- fact:slots -->
+-Turn the dial to a browning level from 1 to 7. <!-- fact:browning-levels -->
++Turn the dial to a browning level from 1 to 9. <!-- fact:browning-levels -->
+ Level 4 is the one most people mean by "toast".
+ 
+ ## 2. Talk to it
+@@ -23,7 +23,7 @@ Examples that work on day one:
+ - "Hey Tostr, same as yesterday."
+ - "Hey Tostr, be nicer." (switches to Butler) <!-- fact:personality-butler -->
+ 
+-A full cycle at level 4 takes about 90 seconds. <!-- fact:cycle-seconds -->
++A full cycle at level 4 takes about 75 seconds. <!-- fact:cycle-seconds -->
+ Tostr tells you when it is done, in whatever voice you picked.
+ 
+ ## 3. Pick a personality
+diff --git a/facts/hardware.yaml b/facts/hardware.yaml
+index cfc7c80..1d05830 100644
+--- a/facts/hardware.yaml
++++ b/facts/hardware.yaml
+@@ -1,10 +1,10 @@
+ # Tostr — hardware facts. These live in the manual, the SDK, the box, the decks and the site.
+ 
+ - id: browning-levels
+-  value: "7"
+-  statement: "Tostr has 7 browning levels, from 1 (warm bread) to 7 (charcoal)."
++  value: "9"
++  statement: "Tostr has 9 browning levels, from 1 (warm bread) to 9 (charcoal)."
+   status: live
+-  updated: 2026-09-01
++  updated: 2026-10-21
+   owner: hardware
+ 
+ - id: slots
+@@ -15,10 +15,10 @@
+   owner: hardware
+ 
+ - id: cycle-seconds
+-  value: "90"
+-  statement: "A full cycle at level 4 takes 90 seconds."
++  value: "75"
++  statement: "A full cycle at level 4 takes 75 seconds."
+   status: live
+-  updated: 2026-09-01
++  updated: 2026-10-21
+   owner: hardware
+   note: "Measured on standard sliced white bread at room temperature."
+ 
+diff --git a/marketing/box-copy.md b/marketing/box-copy.md
+index 6f5131b..8abbb6b 100644
+--- a/marketing/box-copy.md
++++ b/marketing/box-copy.md
+@@ -1,6 +1,6 @@
+ ---
+ title: Retail box copy
+-reviewed: 2026-09-01
++reviewed: 2026-10-21
+ ---
+ 
+ # Front
+@@ -13,7 +13,7 @@ Finally, a toaster that listens. <!-- fact:product-tagline -->
+ The first smart toaster. <!-- fact:product-claim-first -->
+ Say "Hey Tostr" and tell it how you like it. <!-- fact:wake-word -->
+ 
+-- 7 browning levels <!-- fact:browning-levels -->
++- 9 browning levels <!-- fact:browning-levels -->
+ - 2 extra-wide slots <!-- fact:slots -->
+ - 3 personalities (Butler included, more in the app) <!-- fact:personalities-count --> <!-- fact:personality-butler -->
+ - 2-year warranty <!-- fact:warranty-years -->
+diff --git a/marketing/sales-deck.md b/marketing/sales-deck.md
+index af75417..1b7955a 100644
+--- a/marketing/sales-deck.md
++++ b/marketing/sales-deck.md
+@@ -19,9 +19,9 @@ Demo Gremlin here. It always gets the laugh. <!-- fact:personality-gremlin -->
+ 
+ # Slide 4 — Hardware people trust
+ 
+-- 7 browning levels <!-- fact:browning-levels -->
++- 9 browning levels <!-- fact:browning-levels -->
+ - 2 extra-wide slots <!-- fact:slots -->
+-- 90 seconds to toast <!-- fact:cycle-seconds -->
++- 75 seconds to toast <!-- fact:cycle-seconds -->
+ - 2-year warranty <!-- fact:warranty-years -->
+ 
+ # Slide 5 — A platform, not an appliance <!-- fact:story-platform -->
+diff --git a/out/investor-deck.html b/out/investor-deck.html
+index 202e4f9..aa5e65b 100644
+--- a/out/investor-deck.html
++++ b/out/investor-deck.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+-<meta name="fakto-source" content="pitch/investor-deck.md#305112846e61485b">
++<meta name="fakto-source" content="pitch/investor-deck.md#233c23e048eddc87">
+ <meta name="generator" content="fakto slides renderer">
+ <title>Tostr — seed round</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -59,7 +59,7 @@ strong { color: var(--text); font-weight: 500; }
+   <div class="inner">
+     <span class="kicker">3 / 9</span>
+     <h1>The product</h1>
+-    <div class="body"><p>Tostr is the first smart toaster.</p><p>You say &quot;Hey Tostr&quot; and tell it how you like it.</p><p>It has 3 personalities, so breakfast talks back.</p><p>7 browning levels, and a slice in 90 seconds.</p></div>
++    <div class="body"><p>Tostr is the first smart toaster.</p><p>You say &quot;Hey Tostr&quot; and tell it how you like it.</p><p>It has 3 personalities, so breakfast talks back.</p><p>9 browning levels, and a slice in 75 seconds.</p></div>
+   </div>
+ </section>
+ <section class="slide" data-n="4">
+diff --git a/pitch/investor-deck.md b/pitch/investor-deck.md
+index a70f00e..caeee3e 100644
+--- a/pitch/investor-deck.md
++++ b/pitch/investor-deck.md
+@@ -18,8 +18,8 @@ The toaster has not changed in a hundred years: one dial, one lever, one burnt s
+ Tostr is the first smart toaster. <!-- fact:product-claim-first -->
+ You say "Hey Tostr" and tell it how you like it. <!-- fact:wake-word -->
+ It has 3 personalities, so breakfast talks back. <!-- fact:personalities-count --> <!-- fact:story-breakfast-talks-back -->
+-7 browning levels, <!-- fact:browning-levels -->
+-and a slice in 90 seconds. <!-- fact:cycle-seconds -->
++9 browning levels, <!-- fact:browning-levels -->
++and a slice in 75 seconds. <!-- fact:cycle-seconds -->
+ 
+ # Slide 4 — A platform, not an appliance
+ 
+diff --git a/sdk/README.md b/sdk/README.md
+index 215c3e8..a43205a 100644
+--- a/sdk/README.md
++++ b/sdk/README.md
+@@ -1,4 +1,4 @@
+-<!-- reviewed: 2026-09-01 -->
++<!-- reviewed: 2026-10-21 -->
+ # @tostr/sdk <!-- fact:sdk-package-name -->
+ 
+ Official Node.js client for the first smart toaster. <!-- fact:product-claim-first -->
+@@ -13,5 +13,5 @@ const tostr = new Tostr(apiKey);
+ await tostr.toast({ level: 4, personality: "Coach" }); // fact:sdk-method-toast
+ ```
+ 
+-The client validates `level` against the 7 browning levels <!-- fact:browning-levels -->
++The client validates `level` against the 9 browning levels <!-- fact:browning-levels -->
+ and throttles to 10 requests per minute <!-- fact:api-rate-limit --> so you never see a 429.
+diff --git a/sdk/openapi.yaml b/sdk/openapi.yaml
+index 31a2779..f855c4c 100644
+--- a/sdk/openapi.yaml
++++ b/sdk/openapi.yaml
+@@ -1,4 +1,4 @@
+-# reviewed: 2026-09-01
++# reviewed: 2026-10-21
+ openapi: 3.1.0
+ info:
+   title: Tostr API
+@@ -18,7 +18,7 @@ paths:
+                 level:
+                   type: integer
+                   minimum: 1
+-                  maximum: 7 # fact:browning-levels
++                  maximum: 9 # fact:browning-levels
+                 slot:
+                   type: integer
+                   minimum: 1
+diff --git a/sdk/src/config.ts b/sdk/src/config.ts
+index b910e0d..4391e3a 100644
+--- a/sdk/src/config.ts
++++ b/sdk/src/config.ts
+@@ -1,4 +1,4 @@
+-// reviewed: 2026-09-01
++// reviewed: 2026-10-21
+ // Platform constants.
+ // TOAST_ENDPOINT and MAX_REQUESTS_PER_MINUTE are the source of truth: change them here and
+ // run `fakto sync`, and their facts, the docs, the site and the deck follow.
+@@ -12,8 +12,8 @@ export const MAX_REQUESTS_PER_MINUTE = 10; // fact:api-rate-limit
+ 
+ /** Validated before sending; the API returns 422 outside this range. */
+ export const MIN_LEVEL = 1;
+-export const MAX_LEVEL = 7; // fact:browning-levels
++export const MAX_LEVEL = 9; // fact:browning-levels
+ export const SLOTS = 2; // fact:slots
+ 
+ /** Used for the eta estimate in `toast()`. */
+-export const CYCLE_SECONDS_AT_LEVEL_4 = 90; // fact:cycle-seconds
++export const CYCLE_SECONDS_AT_LEVEL_4 = 75; // fact:cycle-seconds
+diff --git a/website/index.html b/website/index.html
+index 7b15138..7488504 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -32,9 +32,9 @@
+ <section>
+   <h2>It takes orders</h2>
+   <ul>
+-    <li>7 browning levels, from warm bread to charcoal.</li> <!-- fact:browning-levels -->
++    <li>9 browning levels, from warm bread to charcoal.</li> <!-- fact:browning-levels -->
+     <li>2 extra-wide slots. Bagels fit.</li> <!-- fact:slots -->
+-    <li>A perfect slice in 90 seconds.</li> <!-- fact:cycle-seconds -->
++    <li>A perfect slice in 75 seconds.</li> <!-- fact:cycle-seconds -->
+     <li>2-year warranty, because we have met toasters.</li> <!-- fact:warranty-years -->
+   </ul>
+ </section>
+diff --git a/website/pricing.html b/website/pricing.html
+index 6e50579..f9e48fa 100644
+--- a/website/pricing.html
++++ b/website/pricing.html
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<!-- reviewed: 2026-09-01 -->
++<!-- reviewed: 2026-10-21 -->
+ <html lang="en">
+ <head>
+ <meta charset="utf-8">
+@@ -30,7 +30,7 @@
+   </tbody>
+ </table>
+ 
+-<p>Every Tostr has 7 browning levels <!-- fact:browning-levels --> and 2 slots, <!-- fact:slots -->
++<p>Every Tostr has 9 browning levels <!-- fact:browning-levels --> and 2 slots, <!-- fact:slots -->
+ whatever you pay for the app. The 2-year warranty covers the hardware.</p> <!-- fact:warranty-years -->
+ </main>
+ </body>

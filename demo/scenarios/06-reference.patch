@@ -1,0 +1,273 @@
+diff --git a/docs/api-reference.md b/docs/api-reference.md
+index 755112d..5fe9547 100644
+--- a/docs/api-reference.md
++++ b/docs/api-reference.md
+@@ -19,7 +19,7 @@ reviewed: 2026-10-21
+ ### Rate limit
+ 
+ 10 requests per minute per toaster. <!-- fact:api-rate-limit -->
+-Above that you get `429 Too Many Requests`. A cycle takes 90 seconds, <!-- fact:cycle-seconds -->
++Above that you get `429 Too Many Requests`. A cycle takes 75 seconds, <!-- fact:cycle-seconds -->
+ so you were not going to toast faster anyway.
+ 
+ ### Responses
+diff --git a/docs/getting-started.md b/docs/getting-started.md
+index cffe024..25e667c 100644
+--- a/docs/getting-started.md
++++ b/docs/getting-started.md
+@@ -1,6 +1,6 @@
+ ---
+ title: Getting started
+-reviewed: 2026-09-01
++reviewed: 2026-10-21
+ ---
+ 
+ # Getting started
+@@ -23,7 +23,7 @@ Examples that work on day one:
+ - "Hey Tostr, same as yesterday."
+ - "Hey Tostr, be nicer." (switches to Butler) <!-- fact:personality-butler -->
+ 
+-A full cycle at level 4 takes about 90 seconds. <!-- fact:cycle-seconds -->
++A full cycle at level 4 takes about 75 seconds. <!-- fact:cycle-seconds -->
+ Tostr tells you when it is done, in whatever voice you picked.
+ 
+ ## 3. Pick a personality
+diff --git a/facts/company.yaml b/facts/company.yaml
+index 262ad35..0b4a7fa 100644
+--- a/facts/company.yaml
++++ b/facts/company.yaml
+@@ -16,13 +16,20 @@
+   owner: founders
+ 
+ - id: preorders
+-  value: "12,000"
+-  statement: "Tostr has 12,000 pre-orders."
++  value: "15,000"
++  statement: "Tostr has 15,000 pre-orders."
+   status: live
+   updated: 2026-10-21
+   owner: growth
+   note: "Paid deposits only. Waitlist sign-ups are not pre-orders."
+ 
++- id: countries-shipped
++  value: "14"
++  statement: "Tostr ships to 14 countries."
++  status: live
++  updated: 2026-10-21
++  owner: growth
++
+ - id: pack-attach-rate
+   value: "41%"
+   statement: "41% of pre-order customers add Personality Pack."
+diff --git a/facts/hardware.yaml b/facts/hardware.yaml
+index cfc7c80..5411e26 100644
+--- a/facts/hardware.yaml
++++ b/facts/hardware.yaml
+@@ -15,12 +15,12 @@
+   owner: hardware
+ 
+ - id: cycle-seconds
+-  value: "90"
+-  statement: "A full cycle at level 4 takes 90 seconds."
++  value: "75"
++  statement: "A full cycle at level 4 takes 75 seconds."
+   status: live
+-  updated: 2026-09-01
++  updated: 2026-10-21
+   owner: hardware
+-  note: "Measured on standard sliced white bread at room temperature."
++  note: "Measured on standard sliced white bread at room temperature. Was 90; hardware confirmed 75 on 2026-10-21."
+ 
+ - id: warranty-years
+   value: "2"
+diff --git a/facts/product.yaml b/facts/product.yaml
+index 63fb404..227b4f9 100644
+--- a/facts/product.yaml
++++ b/facts/product.yaml
+@@ -56,6 +56,14 @@
+   owner: product
+   note: "Most-loved and most-complained-about personality. Watch the support queue."
+ 
++- id: personality-nonna
++  value: "Nonna"
++  statement: "Nonna: insists you eat something proper, and will not toast white bread without comment. Ships in December 2026."
++  status: draft
++  updated: 2026-10-21
++  owner: product
++  note: "Not shipped yet. Flip to live when she ships, then bump personalities-count to 4."
++
+ - id: hero-headline
+   value: "The True Robotic Revolution Has Arrived"
+   statement: "The landing page hero headline is 'The True Robotic Revolution Has Arrived'."
+diff --git a/facts/story.yaml b/facts/story.yaml
+index 888d02d..bfdf44b 100644
+--- a/facts/story.yaml
++++ b/facts/story.yaml
+@@ -22,3 +22,10 @@
+   updated: 2026-10-21
+   owner: marketing
+   supports: [api-endpoint-toast, sdk-package-name, sdk-method-toast]
++
++- id: story-appliances-have-opinions
++  statement: "Appliances should have opinions: a kitchen full of machines that silently follow orders is a kitchen that never tells you your bread is stale."
++  status: live
++  updated: 2026-10-21
++  owner: founders
++  supports: [personalities-count, personality-butler, personality-coach, personality-gremlin]
+diff --git a/marketing/changelog.md b/marketing/changelog.md
+index a759c61..47f3a5c 100644
+--- a/marketing/changelog.md
++++ b/marketing/changelog.md
+@@ -1,6 +1,6 @@
+ ---
+ title: Changelog
+-reviewed: 2026-09-01
++reviewed: 2026-10-21
+ lifecycle: living
+ ---
+ 
+@@ -10,6 +10,11 @@ Newest first. A new entry is written when a fact changes. Old entries are histor
+ and are never rewritten: their anchors become as-of citations (the anchor with `@date` appended), so
+ the graph still shows where a number used to live and the checker leaves them alone.
+ 
++## 2026-10-21 — Faster, and further
++
++- A full cycle at level 4 now takes 75 seconds, <!-- fact:cycle-seconds --> down from 90. <!-- fact:cycle-seconds@2026-09-01 -->
++- 15,000 pre-orders, <!-- fact:preorders --> shipping to 14 countries. <!-- fact:countries-shipped -->
++
+ ## 2026-09-01 — Tostr 1.0
+ 
+ - Launch. 7 browning levels, <!-- fact:browning-levels@2026-09-01 --> 2 slots, <!-- fact:slots@2026-09-01 --> 90-second cycle. <!-- fact:cycle-seconds@2026-09-01 -->
+diff --git a/marketing/opinions-article.md b/marketing/opinions-article.md
+new file mode 100644
+index 0000000..fe61d19
+--- /dev/null
++++ b/marketing/opinions-article.md
+@@ -0,0 +1,31 @@
++---
++title: Why we gave a toaster opinions
++reviewed: 2026-10-21
++lifecycle: living
++---
++
++# Why we gave a toaster opinions
++
++*By the Tostr founding team*
++
++When we started Tostr in 2025, every investor asked the same question: why would a toaster <!-- fact:company-founded -->
++need software? Our answer has not changed. Appliances should have opinions. A kitchen full of
++machines that silently follow orders is a kitchen that never tells you your bread is stale. <!-- fact:story-appliances-have-opinions -->
++
++Tostr is the first smart toaster. Say "Hey Tostr", tell it what you want, and it <!-- fact:product-claim-first --> <!-- fact:wake-word -->
++answers back in the personality you picked: Butler if you like manners, Coach if you like <!-- fact:story-breakfast-talks-back --> <!-- fact:personality-butler --> <!-- fact:personality-coach -->
++encouragement, Gremlin if you like being judged. <!-- fact:personality-gremlin -->
++
++Tostr ships with 3 personalities today. This winter that list grows, because Nonna joins in <!-- fact:personalities-count --> <!-- fact:personality-nonna -->
++December: she insists you eat something proper, and she will not toast white bread without
++comment.
++
++We also got faster. A full cycle at level 4 now takes 75 seconds, down from what you are used <!-- fact:cycle-seconds -->
++to, and you still pick from 7 browning levels. <!-- fact:browning-levels -->
++
++The response has been bigger than we planned for. We passed 15,000 pre-orders last month, and <!-- fact:preorders -->
++Tostr now ships to 14 countries. Tostr still costs $129, and Personality Pack is still $4.99 a <!-- fact:countries-shipped --> <!-- fact:device-price --> <!-- fact:plan-pro-name --> <!-- fact:plan-pro-price -->
++month.
++
++If you build things, the API is where this gets interesting: `POST /v1/toast` and your <!-- fact:api-endpoint-toast --> <!-- fact:story-platform -->
++calendar can start breakfast. We cannot wait to see what you make it say.
+diff --git a/marketing/sales-deck.md b/marketing/sales-deck.md
+index af75417..c1a4ebb 100644
+--- a/marketing/sales-deck.md
++++ b/marketing/sales-deck.md
+@@ -21,7 +21,7 @@ Demo Gremlin here. It always gets the laugh. <!-- fact:personality-gremlin -->
+ 
+ - 7 browning levels <!-- fact:browning-levels -->
+ - 2 extra-wide slots <!-- fact:slots -->
+-- 90 seconds to toast <!-- fact:cycle-seconds -->
++- 75 seconds to toast <!-- fact:cycle-seconds -->
+ - 2-year warranty <!-- fact:warranty-years -->
+ 
+ # Slide 5 — A platform, not an appliance <!-- fact:story-platform -->
+diff --git a/out/investor-deck.html b/out/investor-deck.html
+index 202e4f9..2daae03 100644
+--- a/out/investor-deck.html
++++ b/out/investor-deck.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+-<meta name="fakto-source" content="pitch/investor-deck.md#305112846e61485b">
++<meta name="fakto-source" content="pitch/investor-deck.md#2a7d91470a17ad15">
+ <meta name="generator" content="fakto slides renderer">
+ <title>Tostr — seed round</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -59,7 +59,7 @@ strong { color: var(--text); font-weight: 500; }
+   <div class="inner">
+     <span class="kicker">3 / 9</span>
+     <h1>The product</h1>
+-    <div class="body"><p>Tostr is the first smart toaster.</p><p>You say &quot;Hey Tostr&quot; and tell it how you like it.</p><p>It has 3 personalities, so breakfast talks back.</p><p>7 browning levels, and a slice in 90 seconds.</p></div>
++    <div class="body"><p>Tostr is the first smart toaster.</p><p>You say &quot;Hey Tostr&quot; and tell it how you like it.</p><p>It has 3 personalities, so breakfast talks back.</p><p>7 browning levels, and a slice in 75 seconds.</p></div>
+   </div>
+ </section>
+ <section class="slide" data-n="4">
+@@ -80,7 +80,7 @@ strong { color: var(--text); font-weight: 500; }
+   <div class="inner">
+     <span class="kicker">6 / 9</span>
+     <h1>Traction</h1>
+-    <div class="body"><p>12,000 pre-orders before launch.</p></div>
++    <div class="body"><p>15,000 pre-orders before launch, shipping to 14 countries.</p></div>
+   </div>
+ </section>
+ <section class="slide" data-n="7">
+diff --git a/pitch/investor-deck.md b/pitch/investor-deck.md
+index a70f00e..35113dd 100644
+--- a/pitch/investor-deck.md
++++ b/pitch/investor-deck.md
+@@ -19,7 +19,7 @@ Tostr is the first smart toaster. <!-- fact:product-claim-first -->
+ You say "Hey Tostr" and tell it how you like it. <!-- fact:wake-word -->
+ It has 3 personalities, so breakfast talks back. <!-- fact:personalities-count --> <!-- fact:story-breakfast-talks-back -->
+ 7 browning levels, <!-- fact:browning-levels -->
+-and a slice in 90 seconds. <!-- fact:cycle-seconds -->
++and a slice in 75 seconds. <!-- fact:cycle-seconds -->
+ 
+ # Slide 4 — A platform, not an appliance
+ 
+@@ -35,7 +35,8 @@ and 41% of pre-order customers already add it. <!-- fact:pack-attach-rate -->
+ 
+ # Slide 6 — Traction
+ 
+-12,000 pre-orders before launch. <!-- fact:preorders -->
++15,000 pre-orders before launch, <!-- fact:preorders -->
++shipping to 14 countries. <!-- fact:countries-shipped -->
+ 
+ # Slide 7 — Market
+ 
+diff --git a/sdk/src/config.ts b/sdk/src/config.ts
+index b910e0d..d02a6bc 100644
+--- a/sdk/src/config.ts
++++ b/sdk/src/config.ts
+@@ -1,4 +1,4 @@
+-// reviewed: 2026-09-01
++// reviewed: 2026-10-21
+ // Platform constants.
+ // TOAST_ENDPOINT and MAX_REQUESTS_PER_MINUTE are the source of truth: change them here and
+ // run `fakto sync`, and their facts, the docs, the site and the deck follow.
+@@ -16,4 +16,4 @@ export const MAX_LEVEL = 7; // fact:browning-levels
+ export const SLOTS = 2; // fact:slots
+ 
+ /** Used for the eta estimate in `toast()`. */
+-export const CYCLE_SECONDS_AT_LEVEL_4 = 90; // fact:cycle-seconds
++export const CYCLE_SECONDS_AT_LEVEL_4 = 75; // fact:cycle-seconds
+diff --git a/website/index.html b/website/index.html
+index 7b15138..aea92ae 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -34,7 +34,7 @@
+   <ul>
+     <li>7 browning levels, from warm bread to charcoal.</li> <!-- fact:browning-levels -->
+     <li>2 extra-wide slots. Bagels fit.</li> <!-- fact:slots -->
+-    <li>A perfect slice in 90 seconds.</li> <!-- fact:cycle-seconds -->
++    <li>A perfect slice in 75 seconds.</li> <!-- fact:cycle-seconds -->
+     <li>2-year warranty, because we have met toasters.</li> <!-- fact:warranty-years -->
+   </ul>
+ </section>

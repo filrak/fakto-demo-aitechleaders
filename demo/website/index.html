@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- reviewed: 2026-10-21 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tostr — the first smart toaster</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav"><a class="logo" href="index.html">Tostr</a><a href="pricing.html">Pricing</a><a href="../docs/getting-started.md">Docs</a></header>
+<main>
+
+<section class="hero">
+  <h1>The True Robotic Revolution Has Arrived</h1> <!-- fact:hero-headline -->
+  <h2>Finally, a toaster that listens.</h2> <!-- fact:product-tagline -->
+  <p>Every appliance in your kitchen got smarter except the one you use every morning.</p> <!-- fact:story-first-smart-toaster -->
+  <p>Tostr is the first smart toaster.</p> <!-- fact:product-claim-first -->
+  <p>Say "Hey Tostr, medium, and don't judge me" and it does exactly that. Mostly.</p> <!-- fact:wake-word -->
+</section>
+
+<section>
+  <h2>It talks back</h2> <!-- fact:story-breakfast-talks-back -->
+  <p>Pick one of 3 personalities and your toaster has opinions about your bread:</p> <!-- fact:personalities-count -->
+  <ul>
+    <li><strong>Butler</strong> — polite, brief, never mentions the crumbs.</li> <!-- fact:personality-butler -->
+    <li><strong>Coach</strong> — counts your slices and calls seconds "one more rep".</li> <!-- fact:personality-coach -->
+    <li><strong>Gremlin</strong> — sarcastic, and sometimes toasts one side darker on purpose.</li> <!-- fact:personality-gremlin -->
+  </ul>
+</section>
+
+<section>
+  <h2>It takes orders</h2>
+  <ul>
+    <li>7 browning levels, from warm bread to charcoal.</li> <!-- fact:browning-levels -->
+    <li>2 extra-wide slots. Bagels fit.</li> <!-- fact:slots -->
+    <li>A perfect slice in 90 seconds.</li> <!-- fact:cycle-seconds -->
+    <li>2-year warranty, because we have met toasters.</li> <!-- fact:warranty-years -->
+  </ul>
+</section>
+
+<section>
+  <h2>It takes code</h2>
+  <p>Your calendar can start your toast. So can Slack. So can anything.</p> <!-- fact:story-platform -->
+<pre><code>import { Tostr } from "@tostr/sdk"; <!-- fact:sdk-package-name -->
+const tostr = new Tostr(process.env.TOSTR_KEY);
+await tostr.toast({ level: 4, personality: "Coach" }); <!-- fact:sdk-method-toast -->
+</code></pre>
+</section>
+
+<p class="links"><a href="pricing.html">See pricing</a> · <a href="../docs/getting-started.md">Read the docs</a></p>
+</main>
+</body>
+</html>

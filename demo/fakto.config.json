@@ -1,0 +1,7 @@
+{
+  "facts": "facts",
+  "artifacts": ["website", "docs", "sdk", "pitch", "marketing"],
+  "renders": [
+    { "from": "pitch/investor-deck.md", "to": "out/investor-deck.html", "with": "slides", "title": "Tostr — seed round" }
+  ]
+}

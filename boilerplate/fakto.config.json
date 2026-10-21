@@ -1,0 +1,5 @@
+{
+  "facts": "facts",
+  "artifacts": ["website", "docs", "marketing"],
+  "houseRules": "house-rules.md"
+}

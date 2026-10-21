@@ -1,0 +1,88 @@
+diff --git a/docs/api-reference.md b/docs/api-reference.md
+index 755112d..d068f24 100644
+--- a/docs/api-reference.md
++++ b/docs/api-reference.md
+@@ -5,7 +5,7 @@ reviewed: 2026-10-21
+ 
+ # API reference
+ 
+-## Start a toast job <!-- from:sdk/openapi.yaml#paths./v1/toast@69cbd9cc7c64 -->
++## Start a toast job <!-- from:sdk/openapi.yaml#paths./v1/toast@bd13b61244e3 -->
+ 
+ `POST /v1/toast` <!-- fact:api-endpoint-toast -->
+ 
+@@ -18,7 +18,7 @@ reviewed: 2026-10-21
+ 
+ ### Rate limit
+ 
+-10 requests per minute per toaster. <!-- fact:api-rate-limit -->
++12 requests per minute per toaster. <!-- fact:api-rate-limit -->
+ Above that you get `429 Too Many Requests`. A cycle takes 90 seconds, <!-- fact:cycle-seconds -->
+ so you were not going to toast faster anyway.
+ 
+diff --git a/facts/api.yaml b/facts/api.yaml
+index 12bef0b..9bd9c3b 100644
+--- a/facts/api.yaml
++++ b/facts/api.yaml
+@@ -9,10 +9,10 @@
+   source: sdk/src/config.ts
+ 
+ - id: api-rate-limit
+-  value: "10"
+-  statement: "The API accepts 10 requests per minute per toaster."
++  value: "12"
++  statement: "The API accepts 12 requests per minute per toaster."
+   status: live
+-  updated: 2026-09-01
++  updated: 2026-10-21
+   owner: platform
+   note: "It is a toaster. It cannot toast faster than that anyway."
+   source: sdk/src/config.ts
+diff --git a/sdk/README.md b/sdk/README.md
+index 215c3e8..8c08236 100644
+--- a/sdk/README.md
++++ b/sdk/README.md
+@@ -1,4 +1,4 @@
+-<!-- reviewed: 2026-09-01 -->
++<!-- reviewed: 2026-10-21 -->
+ # @tostr/sdk <!-- fact:sdk-package-name -->
+ 
+ Official Node.js client for the first smart toaster. <!-- fact:product-claim-first -->
+@@ -14,4 +14,4 @@ await tostr.toast({ level: 4, personality: "Coach" }); // fact:sdk-method-toast
+ ```
+ 
+ The client validates `level` against the 7 browning levels <!-- fact:browning-levels -->
+-and throttles to 10 requests per minute <!-- fact:api-rate-limit --> so you never see a 429.
++and throttles to 12 requests per minute <!-- fact:api-rate-limit --> so you never see a 429.
+diff --git a/sdk/openapi.yaml b/sdk/openapi.yaml
+index 31a2779..97b75be 100644
+--- a/sdk/openapi.yaml
++++ b/sdk/openapi.yaml
+@@ -1,4 +1,4 @@
+-# reviewed: 2026-09-01
++# reviewed: 2026-10-21
+ openapi: 3.1.0
+ info:
+   title: Tostr API
+@@ -8,7 +8,7 @@ paths:
+   /v1/toast:
+     post:
+       summary: Start a toast job # fact:api-endpoint-toast (POST /v1/toast)
+-      description: Rate limited to 10 requests per minute per toaster. # fact:api-rate-limit
++      description: Rate limited to 12 requests per minute per toaster. # fact:api-rate-limit
+       requestBody:
+         content:
+           application/json:
+diff --git a/sdk/src/config.ts b/sdk/src/config.ts
+index b910e0d..a94bc5f 100644
+--- a/sdk/src/config.ts
++++ b/sdk/src/config.ts
+@@ -8,7 +8,7 @@ export const API_BASE = "https://api.tostr.dev";
+ export const TOAST_ENDPOINT = "POST /v1/toast"; // fact:api-endpoint-toast
+ 
+ /** Client-side throttle, matches the API limit. */
+-export const MAX_REQUESTS_PER_MINUTE = 10; // fact:api-rate-limit
++export const MAX_REQUESTS_PER_MINUTE = 12; // fact:api-rate-limit
+ 
+ /** Validated before sending; the API returns 422 outside this range. */
+ export const MIN_LEVEL = 1;

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx fakto:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx --no fakto check 2>&1 | tail -n 8"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f fakto.config.json ] && [ -z \"$FAKTO_CANVAS_RUN\" ] && echo 'This is a Fakto repo. Before anything else, use the fakto-canvas skill: start the canvas (npx fakto canvas --background) and tell the user where it runs.' || true"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "company-facts",
+  "private": true,
+  "type": "module",
+  "description": "Your company's facts and every file that states them, kept in line by Fakto.",
+  "scripts": {
+    "check": "fakto check",
+    "stale": "fakto stale",
+    "graph": "fakto graph",
+    "canvas": "fakto canvas"
+  },
+  "devDependencies": {
+    "fakto": "^0.1.0"
+  }
+}

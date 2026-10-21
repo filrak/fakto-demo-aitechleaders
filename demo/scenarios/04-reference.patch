@@ -1,0 +1,100 @@
+diff --git a/facts/story.yaml b/facts/story.yaml
+index 888d02d..580a682 100644
+--- a/facts/story.yaml
++++ b/facts/story.yaml
+@@ -17,7 +17,7 @@
+   supports: [wake-word, personalities-count, personality-butler, personality-coach, personality-gremlin]
+ 
+ - id: story-platform
+-  statement: "Tostr is a platform, not an appliance: anything that can call an API can make breakfast."
++  statement: "Tostr is the breakfast API: developers build on it the way they build on payments or maps."
+   status: live
+   updated: 2026-10-21
+   owner: marketing
+diff --git a/marketing/sales-deck.md b/marketing/sales-deck.md
+index af75417..c3a4230 100644
+--- a/marketing/sales-deck.md
++++ b/marketing/sales-deck.md
+@@ -24,7 +24,9 @@ Demo Gremlin here. It always gets the laugh. <!-- fact:personality-gremlin -->
+ - 90 seconds to toast <!-- fact:cycle-seconds -->
+ - 2-year warranty <!-- fact:warranty-years -->
+ 
+-# Slide 5 — A platform, not an appliance <!-- fact:story-platform -->
++# Slide 5 — The breakfast API <!-- fact:story-platform -->
++
++Frame it like payments or maps: developers build on Tostr, they don't just plug it in.
+ 
+ Developers program it through the API: `POST /v1/toast` <!-- fact:api-endpoint-toast -->
+ and the `@tostr/sdk` package. <!-- fact:sdk-package-name -->
+diff --git a/out/investor-deck.html b/out/investor-deck.html
+index ea6a34a..27512bf 100644
+--- a/out/investor-deck.html
++++ b/out/investor-deck.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+-<meta name="fakto-source" content="pitch/investor-deck.md#305112846e61485b">
++<meta name="fakto-source" content="pitch/investor-deck.md#950b7ded0edd8570">
+ <meta name="generator" content="fakto slides renderer">
+ <title>Tostr — seed round</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -52,7 +52,7 @@ strong { color: var(--text); font-weight: 500; }
+   <div class="inner">
+     <span class="kicker">2 / 9</span>
+     <h1>The problem</h1>
+-    <div class="body"><p>Breakfast is the last room in the house without software.</p><p>The toaster has not changed in a hundred years: one dial, one lever, one burnt slice.</p></div>
++    <div class="body"><p>The toaster is the last appliance in the kitchen without software.</p><p>The toaster has not changed in a hundred years: one dial, one lever, one burnt slice.</p></div>
+   </div>
+ </section>
+ <section class="slide" data-n="3">
+@@ -65,8 +65,8 @@ strong { color: var(--text); font-weight: 500; }
+ <section class="slide" data-n="4">
+   <div class="inner">
+     <span class="kicker">4 / 9</span>
+-    <h1>A platform, not an appliance</h1>
+-    <div class="body"><p>Developers start a toast with <code>POST /v1/toast</code>, so calendars, smart homes and alarm clocks can make breakfast.</p></div>
++    <h1>The breakfast API</h1>
++    <div class="body"><p>Developers start a toast with <code>POST /v1/toast</code>, so breakfast becomes something they build on, the way they build on payments or maps.</p></div>
+   </div>
+ </section>
+ <section class="slide" data-n="5">
+diff --git a/pitch/investor-deck.md b/pitch/investor-deck.md
+index a70f00e..60b03b7 100644
+--- a/pitch/investor-deck.md
++++ b/pitch/investor-deck.md
+@@ -10,7 +10,7 @@ Finally, a toaster that listens. <!-- fact:product-tagline -->
+ 
+ # Slide 2 — The problem
+ 
+-Breakfast is the last room in the house without software. <!-- fact:story-first-smart-toaster -->
++The toaster is the last appliance in the kitchen without software. <!-- fact:story-first-smart-toaster -->
+ The toaster has not changed in a hundred years: one dial, one lever, one burnt slice.
+ 
+ # Slide 3 — The product
+@@ -21,10 +21,10 @@ It has 3 personalities, so breakfast talks back. <!-- fact:personalities-count -
+ 7 browning levels, <!-- fact:browning-levels -->
+ and a slice in 90 seconds. <!-- fact:cycle-seconds -->
+ 
+-# Slide 4 — A platform, not an appliance
++# Slide 4 — The breakfast API
+ 
+ Developers start a toast with `POST /v1/toast`, <!-- fact:api-endpoint-toast -->
+-so calendars, smart homes and alarm clocks can make breakfast. <!-- fact:story-platform -->
++so breakfast becomes something they build on, the way they build on payments or maps. <!-- fact:story-platform -->
+ 
+ # Slide 5 — Business model
+ 
+diff --git a/website/index.html b/website/index.html
+index 7b15138..4f804b0 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -41,7 +41,7 @@
+ 
+ <section>
+   <h2>It takes code</h2>
+-  <p>Your calendar can start your toast. So can Slack. So can anything.</p> <!-- fact:story-platform -->
++  <p>Tostr is the breakfast API. Build on it the way you build on payments or maps.</p> <!-- fact:story-platform -->
+ <pre><code>import { Tostr } from "@tostr/sdk"; <!-- fact:sdk-package-name -->
+ const tostr = new Tostr(process.env.TOSTR_KEY);
+ await tostr.toast({ level: 4, personality: "Coach" }); <!-- fact:sdk-method-toast -->

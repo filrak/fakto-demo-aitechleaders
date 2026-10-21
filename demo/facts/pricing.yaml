@@ -1,0 +1,29 @@
+# Tostr — plans. The toaster is hardware; the app and API have a free and a paid tier.
+
+- id: plan-free-price
+  value: "$0"
+  statement: "The Free tier costs $0: Butler personality, manual toasting, API read access."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: plan-pro-price
+  value: "$4.99"
+  statement: "Personality Pack costs $4.99 per month: all personalities, Bagel mode, full API access."
+  status: live
+  updated: 2026-09-01
+  owner: product
+
+- id: plan-pro-name
+  value: "Personality Pack"
+  statement: "The paid tier is called Personality Pack."
+  status: live
+  updated: 2026-09-01
+  owner: marketing
+
+- id: device-price
+  value: "$129"
+  statement: "Tostr costs $129."
+  status: live
+  updated: 2026-10-21
+  owner: product

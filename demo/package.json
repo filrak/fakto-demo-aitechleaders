@@ -1,0 +1,17 @@
+{
+  "name": "fakto-example-tostr",
+  "private": true,
+  "type": "module",
+  "description": "Tostr, the first smart toaster: the demo repo for Fakto.",
+  "scripts": {
+    "graph": "fakto graph",
+    "check": "fakto check",
+    "stale": "fakto stale",
+    "show": "fakto show",
+    "touch": "fakto touch",
+    "canvas": "fakto canvas"
+  },
+  "devDependencies": {
+    "fakto": "^0.1.0"
+  }
+}

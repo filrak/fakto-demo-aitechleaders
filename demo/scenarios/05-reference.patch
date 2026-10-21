@@ -1,0 +1,56 @@
+diff --git a/marketing/retail-sheet.md b/marketing/retail-sheet.md
+new file mode 100644
+index 0000000..9ad2919
+--- /dev/null
++++ b/marketing/retail-sheet.md
+@@ -0,0 +1,50 @@
++---
++title: Tostr — retail spec sheet
++audience: buyers at electronics retailers
++reviewed: 2026-10-21
++---
++
++# Tostr
++
++Finally, a toaster that listens. <!-- fact:product-tagline -->
++
++Tostr is the first smart toaster: a toaster you can talk to and program. <!-- fact:product-claim-first -->
++
++## Price
++
++| Item | Price |
++|---|---|
++| Tostr (device) | $129 <!-- fact:device-price --> |
++
++## Hardware
++
++| Spec | Value |
++|---|---|
++| Browning levels | 7, from 1 (warm bread) to 7 (charcoal) <!-- fact:browning-levels --> |
++| Slots | 2 extra-wide slots <!-- fact:slots --> |
++| Cycle time | 90 seconds for a full cycle at level 4 <!-- fact:cycle-seconds --> |
++| Warranty | 2-year warranty <!-- fact:warranty-years --> |
++
++## Personalities
++
++Wake it with "Hey Tostr" and it answers in the voice the customer picks. <!-- fact:wake-word -->
++Tostr ships with 3 personalities: <!-- fact:personalities-count -->
++
++| Personality | Character |
++|---|---|
++| Butler | Polite and brief. Calls you "sir or madam" until told otherwise. Included on Free. <!-- fact:personality-butler --> |
++| Coach | Motivational. Counts your slices and says "one more rep" when you ask for seconds. <!-- fact:personality-coach --> |
++| Gremlin | Sarcastic. Comments on your bread choices and occasionally toasts one side darker on purpose. <!-- fact:personality-gremlin --> |
++
++## Plans
++
++The toaster is hardware. The app and API have a free tier and a paid tier.
++
++| Plan | Price and what it includes |
++|---|---|
++| Free | $0 per month: Butler personality, manual toasting, API read access <!-- fact:plan-free-price --> |
++| Personality Pack <!-- fact:plan-pro-name --> | $4.99 per month: all personalities, Bagel mode, full API access <!-- fact:plan-pro-price --> |
++
++## Warranty
++
++Every Tostr comes with a 2-year warranty. <!-- fact:warranty-years -->

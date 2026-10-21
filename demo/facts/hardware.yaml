@@ -1,0 +1,30 @@
+# Tostr — hardware facts. These live in the manual, the SDK, the box, the decks and the site.
+
+- id: browning-levels
+  value: "7"
+  statement: "Tostr has 7 browning levels, from 1 (warm bread) to 7 (charcoal)."
+  status: live
+  updated: 2026-09-01
+  owner: hardware
+
+- id: slots
+  value: "2"
+  statement: "Tostr has 2 extra-wide slots."
+  status: live
+  updated: 2026-09-01
+  owner: hardware
+
+- id: cycle-seconds
+  value: "90"
+  statement: "A full cycle at level 4 takes 90 seconds."
+  status: live
+  updated: 2026-09-01
+  owner: hardware
+  note: "Measured on standard sliced white bread at room temperature."
+
+- id: warranty-years
+  value: "2"
+  statement: "Tostr comes with a 2-year warranty."
+  status: live
+  updated: 2026-09-01
+  owner: product

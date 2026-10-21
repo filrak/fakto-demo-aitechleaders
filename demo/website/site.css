@@ -1,0 +1,20 @@
+/* Shared styles for the Tostr demo site. Carries no facts, so fakto never scans it. */
+:root { --bg: #FBF7F1; --text: #1E1A16; --muted: #6E655C; --line: #E9E1D6; --accent: #E0742B; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 18px/1.6 Inter, system-ui, sans-serif; }
+.nav { display: flex; gap: 24px; align-items: center; max-width: 960px; margin: 0 auto; padding: 20px 24px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.nav .logo { color: var(--text); font-weight: 600; font-size: 18px; margin-right: auto; }
+main { max-width: 960px; margin: 0 auto; padding: 24px 24px 96px; }
+section { padding: 40px 0; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: 64px; line-height: 1.05; letter-spacing: -.035em; font-weight: 600; margin: 24px 0 12px; }
+.hero h2 { font-size: 28px; font-weight: 400; color: var(--accent); margin: 0 0 24px; }
+h2 { font-size: 30px; letter-spacing: -.02em; margin: 0 0 12px; }
+p { margin: 8px 0; color: var(--muted); }
+ul { padding-left: 1.2em; color: var(--muted); }
+strong { color: var(--text); }
+pre { background: #1E1A16; color: #F3EDE4; padding: 20px; border-radius: 12px; font-size: 15px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin: 32px 0; }
+th, td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--line); }
+th { font-size: 15px; color: var(--muted); font-weight: 500; }
+.links a { color: var(--accent); }
