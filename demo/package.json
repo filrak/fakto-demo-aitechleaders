@@ -12,6 +12,6 @@
     "canvas": "fakto canvas"
   },
   "devDependencies": {
-    "fakto": "^0.1.0"
+    "fakto": "^0.0.1"
   }
 }
