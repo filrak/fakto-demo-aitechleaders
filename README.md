@@ -29,8 +29,9 @@ Each folder is a self-contained Fakto project with its own `CLAUDE.md`, its own 
 skills and a "For agents" section in its README. Work from inside the folder.
 
 The skills live in each folder's hidden `.claude/` directory, so Claude Code loads them when
-you start it there. They are part of this repo, not of the npm package (`@fakto/core` is the
-CLI, the library and the canvas):
+you start it there. They come from the npm package `@fakto/core`: `npm install` runs
+`fakto skills`, which writes them there stamped with the package version, and every session
+start refreshes them. They are committed so you can read them here; never edit them by hand.
 
 | Skill | What it does | demo | boilerplate |
 |---|---|---|---|

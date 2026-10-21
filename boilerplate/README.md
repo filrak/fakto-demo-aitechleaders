@@ -8,7 +8,7 @@ rewrites them, while a live map in your browser shows it happening.
 
 ```bash
 git clone <this repo> && cd <it>
-npm install
+npm install            # installs Fakto and its Claude Code skills (.claude/skills)
 claude                 # Claude Code, in this folder
 ```
 
@@ -36,7 +36,14 @@ How this repo works, in the order you need it.
 | `fakto.config.json` | which folders are facts and materials; `houseRules`; `renders` |
 | `house-rules.md` | voice and wording rules; read before rewriting anything |
 | `.claude/skills/fakto` | the propagate workflow (cases A to F); use it for every change |
+| `npx fakto skills` | installs or refreshes the two skills and the hooks from the package |
 | `.claude/skills/fakto-canvas` | starts the live map; use it at the start of every session |
+
+**Where the skills come from.** `.claude/skills/` and the Fakto hooks in `.claude/settings.json`
+are installed by `npx fakto skills` from the `@fakto/core` package, stamped with its version.
+`npm install` runs it (postinstall) and so does every session start, so they always match the
+CLI they call. Never edit them by hand: `npx fakto skills --check` reports edits and old
+versions, and `npx fakto check` warns about them.
 
 **A fact record.**
 

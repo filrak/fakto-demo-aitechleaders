@@ -25,7 +25,7 @@ scenarios/    the live demos
 
 ```bash
 git clone <this repo> && cd <it>/demo     # or wherever this folder lives
-npm install
+npm install                               # installs Fakto and its Claude Code skills
 claude                                    # Claude Code, in this folder
 ```
 
@@ -55,6 +55,12 @@ npm run show browning-levels  # one fact and every line that depends on it
 | `out/` | generated from `pitch/investor-deck.md`; run `npx fakto render`, never edit |
 | `.claude/skills/fakto` | the propagate workflow, cases A to F; use it for every change |
 | `.claude/skills/fakto-canvas` | starts the live map; use it at the start of every session |
+
+**Where the skills come from.** `.claude/skills/` and the Fakto hooks in `.claude/settings.json`
+are installed by `npx fakto skills` from the `@fakto/core` package, stamped with its version.
+`npm install` runs it (postinstall) and so does every session start, so they always match the
+CLI they call. Never edit them by hand: `npx fakto skills --check` reports edits and old
+versions, and `npx fakto check` warns about them.
 | `scenarios/` | demo scripts, their inputs and reference runs; not scanned |
 
 The loop for any change: change the record (or, for a derived fact, its source file), bump

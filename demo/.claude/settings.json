@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -f fakto.config.json ] && [ -z \"$FAKTO_CANVAS_RUN\" ] && echo 'This is a Fakto repo. Before anything else, use the fakto-canvas skill: start the canvas (npx fakto canvas --background) and tell the user where it runs.' || true"
+            "command": "[ -f fakto.config.json ] && [ -z \"$FAKTO_CANVAS_RUN\" ] && { if [ -x node_modules/.bin/fakto ]; then node_modules/.bin/fakto skills --quiet; echo 'This is a Fakto repo. Before anything else, use the fakto-canvas skill: start the canvas (npx fakto canvas --background) and tell the user where it runs.'; else echo 'This is a Fakto repo whose dependencies are not installed yet. Before anything else run npm install: it installs Fakto and refreshes its Claude skills in .claude/skills. Then use the fakto-canvas skill to start the canvas and tell the user where it runs.'; fi; } || true"
           }
         ]
       }

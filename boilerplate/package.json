@@ -4,12 +4,14 @@
   "type": "module",
   "description": "Your company's facts and every file that states them, kept in line by Fakto.",
   "scripts": {
+    "postinstall": "fakto skills",
     "check": "fakto check",
     "stale": "fakto stale",
     "graph": "fakto graph",
-    "canvas": "fakto canvas"
+    "canvas": "fakto canvas",
+    "skills": "fakto skills"
   },
   "devDependencies": {
-    "@fakto/core": "^0.0.1"
+    "@fakto/core": "^0.0.2"
   }
 }

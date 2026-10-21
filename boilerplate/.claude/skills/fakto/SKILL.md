@@ -129,3 +129,5 @@ Some facts and sections follow a file instead of the other way round: a fact wit
 - Render outputs are build output: edit the source, then `npx fakto render`.
 - A derived fact (one with `source:`) follows its file: change the file, never the record.
 - Fenced examples are copies: `npx fakto sync` writes them, nobody else.
+
+<!-- Installed by `fakto skills` from @fakto/core@0.0.2. Do not edit: `fakto skills` overwrites this file; change the package's skills instead. -->

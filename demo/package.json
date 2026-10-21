@@ -4,14 +4,16 @@
   "type": "module",
   "description": "Tostr, the first smart toaster: the demo repo for Fakto.",
   "scripts": {
+    "postinstall": "fakto skills",
     "graph": "fakto graph",
     "check": "fakto check",
     "stale": "fakto stale",
     "show": "fakto show",
     "touch": "fakto touch",
-    "canvas": "fakto canvas"
+    "canvas": "fakto canvas",
+    "skills": "fakto skills"
   },
   "devDependencies": {
-    "@fakto/core": "^0.0.1"
+    "@fakto/core": "^0.0.2"
   }
 }

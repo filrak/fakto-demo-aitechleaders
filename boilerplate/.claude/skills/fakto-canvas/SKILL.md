@@ -38,3 +38,5 @@ start it before anything else.
 - The canvas has its own buttons (Save on a fact, Sync, Sync all). They run the user's Claude
   Code CLI in this repo; their results land in the same files you see.
 - Leave it running when the session ends. If the user asks to stop it: `npx fakto canvas --stop`.
+
+<!-- Installed by `fakto skills` from @fakto/core@0.0.2. Do not edit: `fakto skills` overwrites this file; change the package's skills instead. -->
